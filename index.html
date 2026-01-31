@@ -358,157 +358,104 @@
     <section id="galeri" class="py-16 md:py-24 bg-gray-50">
         <div class="container mx-auto px-4">
             <!-- Section Header -->
-            <div class="text-center max-w-2xl mx-auto mb-12 md:mb-16">
+            <div class="text-center max-w-2xl mx-auto mb-12">
                 <span class="inline-block text-accent font-semibold mb-3">GALERİ</span>
                 <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Çalışmalarımızdan Kareler</h2>
-                <p class="text-gray-600 text-lg">Eyüpsultan ve Avrupa Yakası'nda gerçekleştirdiğimiz kombi bakımı, petek temizliği ve tesisat işlerinden örnekler.</p>
+                <p class="text-gray-600 text-lg mb-8">Eyüpsultan ve Avrupa Yakası'nda gerçekleştirdiğimiz kombi bakımı, petek temizliği ve tesisat işlerinden örnekler.</p>
             </div>
             
-            <!-- Gallery Grid - Images -->
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
-                <!-- Gallery Item 1 -->
-                <div class="gallery-item relative group overflow-hidden rounded-xl shadow-md cursor-pointer" onclick="openLightbox(0)">
-                    <img src="galeri-1.jpeg" alt="Kenan Tesisat çalışması" class="w-full h-48 md:h-56 object-cover transition-transform duration-500 group-hover:scale-110">
+            <!-- Preview Grid (4 images only) -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <div class="gallery-item relative group overflow-hidden rounded-xl shadow-md cursor-pointer" onclick="openGalleryModal()">
+                    <img src="galeri-1.jpeg" alt="Kenan Tesisat çalışması" class="w-full h-40 md:h-48 object-cover transition-transform duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <i class="fas fa-search-plus text-white text-3xl"></i>
+                        <i class="fas fa-images text-white text-2xl"></i>
                     </div>
                 </div>
-                
-                <!-- Gallery Item 2 -->
-                <div class="gallery-item relative group overflow-hidden rounded-xl shadow-md cursor-pointer" onclick="openLightbox(1)">
-                    <img src="galeri-2.jpeg" alt="Kenan Tesisat çalışması" class="w-full h-48 md:h-56 object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="gallery-item relative group overflow-hidden rounded-xl shadow-md cursor-pointer" onclick="openGalleryModal()">
+                    <img src="galeri-5.jpeg" alt="Kenan Tesisat çalışması" class="w-full h-40 md:h-48 object-cover transition-transform duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <i class="fas fa-search-plus text-white text-3xl"></i>
+                        <i class="fas fa-images text-white text-2xl"></i>
                     </div>
                 </div>
-                
-                <!-- Gallery Item 3 -->
-                <div class="gallery-item relative group overflow-hidden rounded-xl shadow-md cursor-pointer" onclick="openLightbox(2)">
-                    <img src="galeri-3.jpeg" alt="Kenan Tesisat çalışması" class="w-full h-48 md:h-56 object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="gallery-item relative group overflow-hidden rounded-xl shadow-md cursor-pointer" onclick="openGalleryModal()">
+                    <img src="galeri-10.jpeg" alt="Kenan Tesisat çalışması" class="w-full h-40 md:h-48 object-cover transition-transform duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <i class="fas fa-search-plus text-white text-3xl"></i>
+                        <i class="fas fa-images text-white text-2xl"></i>
                     </div>
                 </div>
-                
-                <!-- Gallery Item 4 -->
-                <div class="gallery-item relative group overflow-hidden rounded-xl shadow-md cursor-pointer" onclick="openLightbox(3)">
-                    <img src="galeri-4.jpeg" alt="Kenan Tesisat çalışması" class="w-full h-48 md:h-56 object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <i class="fas fa-search-plus text-white text-3xl"></i>
-                    </div>
-                </div>
-                
-                <!-- Gallery Item 5 -->
-                <div class="gallery-item relative group overflow-hidden rounded-xl shadow-md cursor-pointer" onclick="openLightbox(4)">
-                    <img src="galeri-5.jpeg" alt="Kenan Tesisat çalışması" class="w-full h-48 md:h-56 object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <i class="fas fa-search-plus text-white text-3xl"></i>
-                    </div>
-                </div>
-                
-                <!-- Gallery Item 6 -->
-                <div class="gallery-item relative group overflow-hidden rounded-xl shadow-md cursor-pointer" onclick="openLightbox(5)">
-                    <img src="galeri-6.jpeg" alt="Kenan Tesisat çalışması" class="w-full h-48 md:h-56 object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <i class="fas fa-search-plus text-white text-3xl"></i>
-                    </div>
-                </div>
-                
-                <!-- Gallery Item 7 -->
-                <div class="gallery-item relative group overflow-hidden rounded-xl shadow-md cursor-pointer" onclick="openLightbox(6)">
-                    <img src="galeri-7.jpeg" alt="Kenan Tesisat çalışması" class="w-full h-48 md:h-56 object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <i class="fas fa-search-plus text-white text-3xl"></i>
-                    </div>
-                </div>
-                
-                <!-- Gallery Item 8 -->
-                <div class="gallery-item relative group overflow-hidden rounded-xl shadow-md cursor-pointer" onclick="openLightbox(7)">
-                    <img src="galeri-8.jpeg" alt="Kenan Tesisat çalışması" class="w-full h-48 md:h-56 object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <i class="fas fa-search-plus text-white text-3xl"></i>
-                    </div>
-                </div>
-                
-                <!-- Gallery Item 9 -->
-                <div class="gallery-item relative group overflow-hidden rounded-xl shadow-md cursor-pointer" onclick="openLightbox(8)">
-                    <img src="galeri-9.jpeg" alt="Kenan Tesisat çalışması" class="w-full h-48 md:h-56 object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <i class="fas fa-search-plus text-white text-3xl"></i>
-                    </div>
-                </div>
-                
-                <!-- Gallery Item 10 -->
-                <div class="gallery-item relative group overflow-hidden rounded-xl shadow-md cursor-pointer" onclick="openLightbox(9)">
-                    <img src="galeri-10.jpeg" alt="Kenan Tesisat çalışması" class="w-full h-48 md:h-56 object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <i class="fas fa-search-plus text-white text-3xl"></i>
-                    </div>
-                </div>
-                
-                <!-- Gallery Item 11 -->
-                <div class="gallery-item relative group overflow-hidden rounded-xl shadow-md cursor-pointer" onclick="openLightbox(10)">
-                    <img src="galeri-11.jpeg" alt="Kenan Tesisat çalışması" class="w-full h-48 md:h-56 object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <i class="fas fa-search-plus text-white text-3xl"></i>
-                    </div>
-                </div>
-                
-                <!-- Gallery Item 12 -->
-                <div class="gallery-item relative group overflow-hidden rounded-xl shadow-md cursor-pointer" onclick="openLightbox(11)">
-                    <img src="galeri-12.jpeg" alt="Kenan Tesisat çalışması" class="w-full h-48 md:h-56 object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <i class="fas fa-search-plus text-white text-3xl"></i>
+                <div class="gallery-item relative group overflow-hidden rounded-xl shadow-md cursor-pointer" onclick="openGalleryModal()">
+                    <img src="galeri-15.jpeg" alt="Kenan Tesisat çalışması" class="w-full h-40 md:h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-accent/90 flex items-center justify-center">
+                        <div class="text-center text-primary">
+                            <i class="fas fa-plus text-3xl mb-2"></i>
+                            <p class="font-bold">+33 Fotoğraf</p>
+                            <p class="text-sm">+8 Video</p>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <!-- Video Section -->
-            <h3 class="text-2xl font-bold text-primary mb-6 text-center">Videolarımız</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                <!-- Video 1 -->
-                <div class="relative rounded-xl overflow-hidden shadow-md">
-                    <video class="w-full h-48 md:h-56 object-cover" controls poster="galeri-1.jpeg">
-                        <source src="video-1.mp4" type="video/mp4">
-                    </video>
-                </div>
-                
-                <!-- Video 2 -->
-                <div class="relative rounded-xl overflow-hidden shadow-md">
-                    <video class="w-full h-48 md:h-56 object-cover" controls poster="galeri-2.jpeg">
-                        <source src="video-2.mp4" type="video/mp4">
-                    </video>
-                </div>
-                
-                <!-- Video 3 -->
-                <div class="relative rounded-xl overflow-hidden shadow-md">
-                    <video class="w-full h-48 md:h-56 object-cover" controls poster="galeri-3.jpeg">
-                        <source src="video-3.mp4" type="video/mp4">
-                    </video>
-                </div>
-                
-                <!-- Video 4 -->
-                <div class="relative rounded-xl overflow-hidden shadow-md">
-                    <video class="w-full h-48 md:h-56 object-cover" controls poster="galeri-4.jpeg">
-                        <source src="video-4.mp4" type="video/mp4">
-                    </video>
-                </div>
+            <!-- Open Gallery Button -->
+            <div class="text-center">
+                <button onclick="openGalleryModal()" class="inline-flex items-center bg-accent hover:bg-accent-dark text-primary font-bold px-8 py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl text-lg">
+                    <i class="fas fa-images mr-3"></i>
+                    Tüm Galeriyi Gör
+                </button>
             </div>
         </div>
     </section>
     
+    <!-- Gallery Modal (Full Gallery) -->
+    <div id="gallery-modal" class="fixed inset-0 bg-black/95 z-[200] hidden overflow-y-auto">
+        <div class="container mx-auto px-4 py-8">
+            <!-- Modal Header -->
+            <div class="flex items-center justify-between mb-8 sticky top-0 bg-black/80 py-4 -mx-4 px-4 z-10">
+                <h3 class="text-2xl md:text-3xl font-bold text-white">
+                    <i class="fas fa-images text-accent mr-3"></i>Galeri
+                </h3>
+                <button onclick="closeGalleryModal()" class="text-white text-3xl hover:text-accent transition-colors">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <!-- Tabs -->
+            <div class="flex justify-center gap-4 mb-8">
+                <button onclick="showTab('photos')" id="tab-photos" class="px-6 py-3 rounded-lg font-semibold transition-all bg-accent text-primary">
+                    <i class="fas fa-camera mr-2"></i>Fotoğraflar (33)
+                </button>
+                <button onclick="showTab('videos')" id="tab-videos" class="px-6 py-3 rounded-lg font-semibold transition-all bg-gray-700 text-white hover:bg-gray-600">
+                    <i class="fas fa-video mr-2"></i>Videolar (8)
+                </button>
+            </div>
+            
+            <!-- Photos Grid -->
+            <div id="photos-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+                <!-- Photos will be generated by JavaScript -->
+            </div>
+            
+            <!-- Videos Grid -->
+            <div id="videos-grid" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Videos will be generated by JavaScript -->
+            </div>
+        </div>
+    </div>
+    
     <!-- Lightbox Modal -->
-    <div id="lightbox" class="fixed inset-0 bg-black/90 z-[200] hidden items-center justify-center">
-        <button onclick="closeLightbox()" class="absolute top-4 right-4 text-white text-4xl hover:text-accent transition-colors">
+    <div id="lightbox" class="fixed inset-0 bg-black/95 z-[300] hidden items-center justify-center">
+        <button onclick="closeLightbox()" class="absolute top-4 right-4 text-white text-4xl hover:text-accent transition-colors z-10">
             <i class="fas fa-times"></i>
         </button>
-        <button onclick="prevImage()" class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-4xl hover:text-accent transition-colors">
+        <button onclick="prevImage()" class="absolute left-4 top-1/2 -translate-y-1/2 text-white text-4xl hover:text-accent transition-colors z-10">
             <i class="fas fa-chevron-left"></i>
         </button>
-        <button onclick="nextImage()" class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-4xl hover:text-accent transition-colors">
+        <button onclick="nextImage()" class="absolute right-4 top-1/2 -translate-y-1/2 text-white text-4xl hover:text-accent transition-colors z-10">
             <i class="fas fa-chevron-right"></i>
         </button>
         <img id="lightbox-img" src="" alt="Galeri görseli" class="max-w-[90%] max-h-[85vh] rounded-lg shadow-2xl">
+        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 text-white text-lg">
+            <span id="lightbox-counter"></span>
+        </div>
     </div>
 
     <!-- ========== STATS SECTION ========== -->
@@ -793,57 +740,137 @@
             }, 3000);
         }
         
-        // Galeri Lightbox fonksiyonları
-        const galleryImages = [
-            'galeri-1.jpeg',
-            'galeri-2.jpeg',
-            'galeri-3.jpeg',
-            'galeri-4.jpeg',
-            'galeri-5.jpeg',
-            'galeri-6.jpeg',
-            'galeri-7.jpeg',
-            'galeri-8.jpeg',
-            'galeri-9.jpeg',
-            'galeri-10.jpeg',
-            'galeri-11.jpeg',
-            'galeri-12.jpeg'
-        ];
+        // Galeri - Tüm görseller ve videolar
+        const galleryImages = [];
+        for (let i = 1; i <= 33; i++) {
+            galleryImages.push('galeri-' + i + '.jpeg');
+        }
+        
+        const galleryVideos = [];
+        for (let i = 1; i <= 8; i++) {
+            galleryVideos.push('video-' + i + '.mp4');
+        }
+        
         let currentImageIndex = 0;
         
+        // Galeri Modal açma/kapama
+        function openGalleryModal() {
+            const modal = document.getElementById('gallery-modal');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            generatePhotosGrid();
+            generateVideosGrid();
+        }
+        
+        function closeGalleryModal() {
+            const modal = document.getElementById('gallery-modal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            // Tüm videoları durdur
+            document.querySelectorAll('#videos-grid video').forEach(v => v.pause());
+        }
+        
+        // Tab değiştirme
+        function showTab(tab) {
+            const photosGrid = document.getElementById('photos-grid');
+            const videosGrid = document.getElementById('videos-grid');
+            const tabPhotos = document.getElementById('tab-photos');
+            const tabVideos = document.getElementById('tab-videos');
+            
+            if (tab === 'photos') {
+                photosGrid.classList.remove('hidden');
+                videosGrid.classList.add('hidden');
+                tabPhotos.className = 'px-6 py-3 rounded-lg font-semibold transition-all bg-accent text-primary';
+                tabVideos.className = 'px-6 py-3 rounded-lg font-semibold transition-all bg-gray-700 text-white hover:bg-gray-600';
+            } else {
+                photosGrid.classList.add('hidden');
+                videosGrid.classList.remove('hidden');
+                videosGrid.classList.add('grid');
+                tabVideos.className = 'px-6 py-3 rounded-lg font-semibold transition-all bg-accent text-primary';
+                tabPhotos.className = 'px-6 py-3 rounded-lg font-semibold transition-all bg-gray-700 text-white hover:bg-gray-600';
+            }
+        }
+        
+        // Fotoğraf grid oluştur
+        function generatePhotosGrid() {
+            const grid = document.getElementById('photos-grid');
+            if (grid.children.length > 0) return; // Zaten oluşturulmuş
+            
+            galleryImages.forEach((img, index) => {
+                const div = document.createElement('div');
+                div.className = 'gallery-item relative group overflow-hidden rounded-xl shadow-md cursor-pointer';
+                div.onclick = () => openLightbox(index);
+                div.innerHTML = `
+                    <img src="${img}" alt="Kenan Tesisat çalışması ${index + 1}" class="w-full h-40 md:h-48 object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                    <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i class="fas fa-search-plus text-white text-2xl"></i>
+                    </div>
+                `;
+                grid.appendChild(div);
+            });
+        }
+        
+        // Video grid oluştur
+        function generateVideosGrid() {
+            const grid = document.getElementById('videos-grid');
+            if (grid.children.length > 0) return; // Zaten oluşturulmuş
+            
+            galleryVideos.forEach((video, index) => {
+                const div = document.createElement('div');
+                div.className = 'relative rounded-xl overflow-hidden shadow-lg bg-gray-900';
+                div.innerHTML = `
+                    <video class="w-full h-64 object-cover" controls poster="galeri-${index + 1}.jpeg">
+                        <source src="${video}" type="video/mp4">
+                    </video>
+                    <div class="absolute top-2 left-2 bg-accent text-primary px-2 py-1 rounded text-sm font-semibold">
+                        Video ${index + 1}
+                    </div>
+                `;
+                grid.appendChild(div);
+            });
+        }
+        
+        // Lightbox fonksiyonları
         function openLightbox(index) {
             currentImageIndex = index;
             const lightbox = document.getElementById('lightbox');
             const lightboxImg = document.getElementById('lightbox-img');
+            const counter = document.getElementById('lightbox-counter');
             lightboxImg.src = galleryImages[index];
+            counter.textContent = (index + 1) + ' / ' + galleryImages.length;
             lightbox.classList.remove('hidden');
             lightbox.classList.add('flex');
-            document.body.style.overflow = 'hidden';
         }
         
         function closeLightbox() {
             const lightbox = document.getElementById('lightbox');
             lightbox.classList.add('hidden');
             lightbox.classList.remove('flex');
-            document.body.style.overflow = 'auto';
         }
         
         function nextImage() {
             currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
             document.getElementById('lightbox-img').src = galleryImages[currentImageIndex];
+            document.getElementById('lightbox-counter').textContent = (currentImageIndex + 1) + ' / ' + galleryImages.length;
         }
         
         function prevImage() {
             currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
             document.getElementById('lightbox-img').src = galleryImages[currentImageIndex];
+            document.getElementById('lightbox-counter').textContent = (currentImageIndex + 1) + ' / ' + galleryImages.length;
         }
         
-        // Klavye ile lightbox kontrolü
+        // Klavye kontrolleri
         document.addEventListener('keydown', (e) => {
             const lightbox = document.getElementById('lightbox');
+            const galleryModal = document.getElementById('gallery-modal');
+            
             if (!lightbox.classList.contains('hidden')) {
                 if (e.key === 'Escape') closeLightbox();
                 if (e.key === 'ArrowRight') nextImage();
                 if (e.key === 'ArrowLeft') prevImage();
+            } else if (!galleryModal.classList.contains('hidden')) {
+                if (e.key === 'Escape') closeGalleryModal();
             }
         });
         
