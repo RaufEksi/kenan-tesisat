@@ -57,10 +57,10 @@
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.05); }
         }
-        @keyframes fadeInUp {
+        @keyframes fadeInDown {
             from {
                 opacity: 0;
-                transform: translateX(-50%) translateY(10px);
+                transform: translateX(-50%) translateY(-10px);
             }
             to {
                 opacity: 1;
@@ -581,10 +581,8 @@
         }
         
         document.querySelectorAll('a[href^="tel:"]').forEach(link => {
-            // Link'in parent'ına relative pozisyon ekle (tooltip için)
-            if (getComputedStyle(link.parentElement).position === 'static') {
-                link.parentElement.style.position = 'relative';
-            }
+            // Link'e relative pozisyon ekle (tooltip için)
+            link.style.position = 'relative';
             
             link.addEventListener('click', function(e) {
                 if (!isMobileDevice()) {
@@ -604,32 +602,28 @@
             });
         });
         
-        // Butonun yanında tooltip gösterme fonksiyonu
+        // Butonun altında tooltip gösterme fonksiyonu
         function showTooltip(element, message) {
             // Varsa eski tooltip'i kaldır
-            const existingTooltip = document.getElementById('phone-tooltip');
+            const existingTooltip = document.querySelector('.phone-tooltip');
             if (existingTooltip) {
                 existingTooltip.remove();
             }
             
-            // Butonun pozisyonunu al
-            const rect = element.getBoundingClientRect();
-            
-            // Yeni tooltip oluştur
+            // Yeni tooltip oluştur (butonun içine ekliyoruz, böylece sayfayla birlikte hareket etmez)
             const tooltip = document.createElement('div');
-            tooltip.id = 'phone-tooltip';
-            tooltip.className = 'fixed bg-green-500 text-white px-4 py-2 rounded-lg shadow-xl z-[100] text-sm font-semibold whitespace-nowrap';
-            tooltip.style.top = (rect.top - 45 + window.scrollY) + 'px';
-            tooltip.style.left = (rect.left + rect.width / 2) + 'px';
+            tooltip.className = 'phone-tooltip absolute left-1/2 bg-green-500 text-white px-4 py-2 rounded-lg shadow-xl z-[100] text-sm font-semibold whitespace-nowrap';
+            tooltip.style.top = '100%';
+            tooltip.style.marginTop = '8px';
             tooltip.style.transform = 'translateX(-50%)';
             tooltip.innerHTML = `
+                <div class="absolute bottom-full left-1/2 -translate-x-1/2 border-8 border-transparent border-b-green-500"></div>
                 ${message}
-                <div class="absolute top-full left-1/2 -translate-x-1/2 border-8 border-transparent border-t-green-500"></div>
             `;
-            document.body.appendChild(tooltip);
+            element.appendChild(tooltip);
             
             // Animasyon ekle
-            tooltip.style.animation = 'fadeInUp 0.3s ease-out';
+            tooltip.style.animation = 'fadeInDown 0.3s ease-out';
             
             // 3 saniye sonra otomatik kapat
             setTimeout(() => {
