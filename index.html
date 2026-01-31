@@ -560,6 +560,58 @@
                 header.classList.remove('shadow-2xl');
             }
         });
+        
+        // PC'de telefon linklerine tıklandığında numara kopyalama
+        function isMobileDevice() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+        
+        document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (!isMobileDevice()) {
+                    e.preventDefault();
+                    const phoneNumber = this.href.replace('tel:', '').replace('+90', '0');
+                    const formattedNumber = phoneNumber.replace(/(\d{4})(\d{3})(\d{2})(\d{2})/, '$1 $2 $3 $4');
+                    
+                    // Numarayı panoya kopyala
+                    navigator.clipboard.writeText(formattedNumber).then(() => {
+                        // Başarılı mesajı göster
+                        showNotification('📋 Numara kopyalandı: ' + formattedNumber);
+                    }).catch(() => {
+                        // Kopyalama başarısız olursa numarayı göster
+                        showNotification('📞 Bizi arayın: ' + formattedNumber);
+                    });
+                }
+            });
+        });
+        
+        // Bildirim gösterme fonksiyonu
+        function showNotification(message) {
+            // Varsa eski bildirimi kaldır
+            const existingNotification = document.getElementById('phone-notification');
+            if (existingNotification) {
+                existingNotification.remove();
+            }
+            
+            // Yeni bildirim oluştur
+            const notification = document.createElement('div');
+            notification.id = 'phone-notification';
+            notification.className = 'fixed top-20 left-1/2 transform -translate-x-1/2 bg-primary text-white px-6 py-4 rounded-lg shadow-2xl z-[100] flex items-center gap-3 animate-bounce';
+            notification.innerHTML = `
+                <span class="text-lg">${message}</span>
+                <button onclick="this.parentElement.remove()" class="ml-2 text-gray-300 hover:text-white">
+                    <i class="fas fa-times"></i>
+                </button>
+            `;
+            document.body.appendChild(notification);
+            
+            // 5 saniye sonra otomatik kapat
+            setTimeout(() => {
+                if (notification.parentElement) {
+                    notification.remove();
+                }
+            }, 5000);
+        }
     </script>
 
 </body>
