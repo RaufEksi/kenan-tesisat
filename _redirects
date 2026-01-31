@@ -1,0 +1,7 @@
+# Netlify Redirects
+
+# Form başarılı gönderim sonrası yönlendirme
+/success  /success.html  200
+
+# www'den www olmayan versiyona yönlendirme
+https://www.kenantesisat.com/*  https://kenantesisat.com/:splat  301!

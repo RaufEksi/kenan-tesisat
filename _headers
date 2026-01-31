@@ -1,0 +1,30 @@
+# Netlify Headers - Performance & Security
+
+# Tüm sayfalar için güvenlik başlıkları
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# Görseller için uzun süreli önbellekleme (1 yıl)
+/*.jpeg
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+
+# Videolar için önbellekleme (1 ay)
+/*.mp4
+  Cache-Control: public, max-age=2592000
+
+# HTML için kısa önbellekleme (1 saat)
+/*.html
+  Cache-Control: public, max-age=3600
+
+# Favicon için önbellekleme (1 hafta)
+/favicon*
+  Cache-Control: public, max-age=604800

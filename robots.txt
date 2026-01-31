@@ -1,0 +1,9 @@
+# Kenan Tesisat - robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://kenantesisat.com/sitemap.xml
+
+# Crawl-delay (isteğe bağlı)
+Crawl-delay: 1
