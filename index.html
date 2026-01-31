@@ -57,6 +57,20 @@
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.05); }
         }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
     </style>
 </head>
 <body class="font-inter text-gray-800 bg-white">
@@ -567,6 +581,11 @@
         }
         
         document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+            // Link'in parent'ına relative pozisyon ekle (tooltip için)
+            if (getComputedStyle(link.parentElement).position === 'static') {
+                link.parentElement.style.position = 'relative';
+            }
+            
             link.addEventListener('click', function(e) {
                 if (!isMobileDevice()) {
                     e.preventDefault();
@@ -576,41 +595,49 @@
                     // Numarayı panoya kopyala
                     navigator.clipboard.writeText(formattedNumber).then(() => {
                         // Başarılı mesajı göster
-                        showNotification('📋 Numara kopyalandı: ' + formattedNumber);
+                        showTooltip(this, '✓ Numara kopyalandı!');
                     }).catch(() => {
                         // Kopyalama başarısız olursa numarayı göster
-                        showNotification('📞 Bizi arayın: ' + formattedNumber);
+                        showTooltip(this, '📞 ' + formattedNumber);
                     });
                 }
             });
         });
         
-        // Bildirim gösterme fonksiyonu
-        function showNotification(message) {
-            // Varsa eski bildirimi kaldır
-            const existingNotification = document.getElementById('phone-notification');
-            if (existingNotification) {
-                existingNotification.remove();
+        // Butonun yanında tooltip gösterme fonksiyonu
+        function showTooltip(element, message) {
+            // Varsa eski tooltip'i kaldır
+            const existingTooltip = document.getElementById('phone-tooltip');
+            if (existingTooltip) {
+                existingTooltip.remove();
             }
             
-            // Yeni bildirim oluştur
-            const notification = document.createElement('div');
-            notification.id = 'phone-notification';
-            notification.className = 'fixed top-20 left-1/2 transform -translate-x-1/2 bg-primary text-white px-6 py-4 rounded-lg shadow-2xl z-[100] flex items-center gap-3 animate-bounce';
-            notification.innerHTML = `
-                <span class="text-lg">${message}</span>
-                <button onclick="this.parentElement.remove()" class="ml-2 text-gray-300 hover:text-white">
-                    <i class="fas fa-times"></i>
-                </button>
-            `;
-            document.body.appendChild(notification);
+            // Butonun pozisyonunu al
+            const rect = element.getBoundingClientRect();
             
-            // 5 saniye sonra otomatik kapat
+            // Yeni tooltip oluştur
+            const tooltip = document.createElement('div');
+            tooltip.id = 'phone-tooltip';
+            tooltip.className = 'fixed bg-green-500 text-white px-4 py-2 rounded-lg shadow-xl z-[100] text-sm font-semibold whitespace-nowrap';
+            tooltip.style.top = (rect.top - 45 + window.scrollY) + 'px';
+            tooltip.style.left = (rect.left + rect.width / 2) + 'px';
+            tooltip.style.transform = 'translateX(-50%)';
+            tooltip.innerHTML = `
+                ${message}
+                <div class="absolute top-full left-1/2 -translate-x-1/2 border-8 border-transparent border-t-green-500"></div>
+            `;
+            document.body.appendChild(tooltip);
+            
+            // Animasyon ekle
+            tooltip.style.animation = 'fadeInUp 0.3s ease-out';
+            
+            // 3 saniye sonra otomatik kapat
             setTimeout(() => {
-                if (notification.parentElement) {
-                    notification.remove();
+                if (tooltip.parentElement) {
+                    tooltip.style.animation = 'fadeOut 0.3s ease-out';
+                    setTimeout(() => tooltip.remove(), 300);
                 }
-            }, 5000);
+            }, 3000);
         }
     </script>
 
