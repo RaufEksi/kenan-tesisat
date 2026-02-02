@@ -450,28 +450,28 @@
                 <p class="text-gray-600 text-lg mb-8">Eyüpsultan ve Avrupa Yakası'nda gerçekleştirdiğimiz kombi bakımı, petek temizliği ve tesisat işlerinden örnekler.</p>
             </div>
             
-            <!-- Preview Grid (4 images only) -->
+            <!-- Preview Grid (4 images only) - Yeni görseller önde -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
                 <div class="gallery-item relative group overflow-hidden rounded-xl shadow-md cursor-pointer" onclick="openGalleryModal()">
-                    <img src="galeri-1.jpeg" alt="Kenan Tesisat çalışması" class="w-full h-40 md:h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <img src="galeri-67.jpeg" alt="Kenan Tesisat çalışması" class="w-full h-40 md:h-48 object-cover transition-transform duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <i class="fas fa-images text-white text-2xl"></i>
                     </div>
                 </div>
                 <div class="gallery-item relative group overflow-hidden rounded-xl shadow-md cursor-pointer" onclick="openGalleryModal()">
-                    <img src="galeri-5.jpeg" alt="Kenan Tesisat çalışması" class="w-full h-40 md:h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <img src="galeri-70.jpeg" alt="Kenan Tesisat çalışması" class="w-full h-40 md:h-48 object-cover transition-transform duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <i class="fas fa-images text-white text-2xl"></i>
                     </div>
                 </div>
                 <div class="gallery-item relative group overflow-hidden rounded-xl shadow-md cursor-pointer" onclick="openGalleryModal()">
-                    <img src="galeri-10.jpeg" alt="Kenan Tesisat çalışması" class="w-full h-40 md:h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <img src="galeri-73.jpeg" alt="Kenan Tesisat çalışması" class="w-full h-40 md:h-48 object-cover transition-transform duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                         <i class="fas fa-images text-white text-2xl"></i>
                     </div>
                 </div>
                 <div class="gallery-item relative group overflow-hidden rounded-xl shadow-md cursor-pointer" onclick="openGalleryModal()">
-                    <img src="galeri-15.jpeg" alt="Kenan Tesisat çalışması" class="w-full h-40 md:h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <img src="galeri-76.jpeg" alt="Kenan Tesisat çalışması" class="w-full h-40 md:h-48 object-cover transition-transform duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-accent/90 flex items-center justify-center">
                         <div class="text-center text-primary">
                             <i class="fas fa-plus text-3xl mb-2"></i>
@@ -827,8 +827,14 @@
         }
         
         // Galeri - Tüm görseller ve videolar
+        // Yeni görseller önce, sonra eskiler
         const galleryImages = [];
-        for (let i = 1; i <= 77; i++) {
+        // Önce yeni yüklenen görseller (67-77)
+        for (let i = 67; i <= 77; i++) {
+            galleryImages.push('galeri-' + i + '.jpeg');
+        }
+        // Sonra eski görseller (1-66)
+        for (let i = 1; i <= 66; i++) {
             galleryImages.push('galeri-' + i + '.jpeg');
         }
         
